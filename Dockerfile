@@ -3,7 +3,7 @@ FROM golang:alpine
 COPY . /go/src/app
 WORKDIR /go/src/app
 
-RUN	apk --no-cache install git
+RUN	apk install --no-cache git
 RUN	go get -insecure goji.io	&& \
 	go get gopkg.in/mgo.v2 		&& \
 	go build -v 			&& \
