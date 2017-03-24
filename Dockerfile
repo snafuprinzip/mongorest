@@ -1,6 +1,6 @@
 FROM golang:alpine
 
-COPY src/restapi/. /go/src/app
+COPY . /go/src/app
 WORKDIR /go/src/app
 
 RUN go build -v
