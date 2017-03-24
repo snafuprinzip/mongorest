@@ -3,9 +3,10 @@ FROM golang:alpine
 COPY . /go/src/app
 WORKDIR /go/src/app
 
-RUN	go get -insecure goji.io && \
-	go get gopkg.in/mgo.v2 && \
-	go build -v && \
+RUN	apk --no-cache install git
+RUN	go get -insecure goji.io	&& \
+	go get gopkg.in/mgo.v2 		&& \
+	go build -v 			&& \
 	go install -v
 
 EXPOSE 8000
